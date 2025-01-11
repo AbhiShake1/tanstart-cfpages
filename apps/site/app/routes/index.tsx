@@ -12,6 +12,7 @@ function Home() {
 
   return (
     <button
+      className='bg-red-300'
       type="button"
       onClick={() => {
         updateCount({ data: 1 }).then(() => {
