@@ -1,23 +1,5 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/start'
-import { getCookie, setCookie } from 'vinxi/http'
-
-async function readCount() {
-  return parseInt(getCookie('count') || '0')
-}
-
-const getCount = createServerFn({
-  method: 'GET',
-}).handler(() => {
-  return readCount()
-})
-
-const updateCount = createServerFn({ method: 'POST' })
-  .validator((d: number) => d)
-  .handler(async ({ data }) => {
-    const count = await readCount()
-    setCookie('count', String(count + data))
-  })
+import { getCount, updateCount } from '@repo/api'
 
 export const Route = createFileRoute('/')({
   component: Home,
