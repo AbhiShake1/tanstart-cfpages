@@ -8,7 +8,7 @@ export default defineConfig({
       viteTsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
-    ]
+    ],
   },
   server: {
     preset: 'cloudflare-pages',

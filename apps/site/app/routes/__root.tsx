@@ -1,4 +1,4 @@
-import "@/styles/globals.css"
+import appStyles from "@/styles/globals.css?url"
 import {
   Outlet,
   ScrollRestoration,
@@ -20,6 +20,9 @@ export const Route = createRootRoute({
       {
         title: 'TanStack Start Starter',
       },
+    ],
+    links: [
+      { rel: "stylesheet", href: appStyles },
     ],
   }),
   component: RootComponent,

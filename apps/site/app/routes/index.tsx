@@ -11,16 +11,19 @@ function Home() {
   const state = Route.useLoaderData()
 
   return (
-    <button
-      className='bg-red-300 text-3xl p-4 m-4'
-      type="button"
-      onClick={() => {
-        updateCount({ data: 1 }).then(() => {
-          router.invalidate()
-        })
-      }}
-    >
-      Add 1 to {state}?
-    </button>
+    <>
+      <button
+        className='bg-red-300 text-3xl p-4 m-4'
+        type="button"
+        onClick={() => {
+          updateCount({ data: 1 }).then(() => {
+            router.invalidate()
+          })
+        }}
+      >
+        Add 1 to {state}?
+      </button>
+      <p>from cloudflare env ${import.meta.env.VITE_FROM_ENV}</p>
+    </>
   )
 }
